@@ -46,6 +46,12 @@
 		<loglevel>TRACE</loglevel>
 		<logonignore>true</logonignore>
 	</QUBE>
+	<QUBE id="ADDWORK02">
+		<logic>com.excellence.ebase6.BLJAddWorkTanaka20210510</logic>
+		<urls>JSON</urls>
+		<loglevel>TRACE</loglevel>
+		<logonignore>true</logonignore>
+	</QUBE>
 	<QUBE id="InsertData">
 		<logic>com.excellence.ebase6.BLJInsertData</logic>
 		<urls>JSON</urls>

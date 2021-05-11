@@ -427,9 +427,18 @@ $(function(){
 	});
 
 	//ログオン処理
+	//20210510 田中追記
 	$('#ebase6_logon').click(function(){
+		var user = $('#user_name').val();
+		var pass = $('#pass_word').val();
+
+		//submit処理開始
+		//$.ajaxSetup({ async: false }); //同期
+		$.postJSON("DQube",{actionID:'ADDWORK02',user:user, pass:pass}, function(login){
+
 		$('#ebase6_initial_body').css('display', 'none');
 		$('#ebase6_shadow').css('display', 'none');
+		});
 	});
 
 	//ポップアップクローズ
@@ -779,6 +788,13 @@ $(function(){
 	$('#ebase6_popup_body').append(inp);
 
     var field = document.getElementById("datafield");
+
+	//チェックボックス作成
+	var check = document.createElement("input");
+	field.appendChild(check);
+		check.setAttribute('type',"checkbox");
+		check.setAttribute('checkd',"checked");
+		check.style.cssText = 'position:absolute;top:150px;'
 
 	 var btn = document.createElement("input");
      field.appendChild(btn);

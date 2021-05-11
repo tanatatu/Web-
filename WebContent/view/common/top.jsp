@@ -8,6 +8,7 @@
 
 	<link rel="stylesheet" href="css/base.css" />
 	<link rel="stylesheet" href="js/jQuery/tablesorter/themes/blue/style.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<!--Business Application System Executer 6  -->
 	<title>在庫管理システム</title>
@@ -85,11 +86,11 @@
 	<table id = "login_ninsyo">
 		<tr>
 		<td>ユーザー名</td>
-		<td><input type="text" name="user" size="32"></td>
+		<td><input id = "user_name" type="text" name="user" size="32"></td>
 		</tr>
 		<tr>
 		<td>パスワード</td>
-		<td><input type="text" name="user" size="32"></td>
+		<td><input id = "pass_word" type="text" name="user" size="32"></td>
 		</tr>
 	</table>
 
