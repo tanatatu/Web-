@@ -190,6 +190,14 @@ table td {
 	border-collapse: collapse;
 }
 
+#ebase6_initial_head {
+	background-color : #aaf;
+}
+
+#ebase6_initial_bottom {
+	position: absolute;
+	top: 30%;
+}
 
 
 

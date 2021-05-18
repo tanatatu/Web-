@@ -109,8 +109,8 @@ public class BLJAddWorkTanaka20210510 extends BLJsonMap4DB implements IBisinessL
 			$pstm.execute();
 
 			if($recode == null){
-				sql="select * from SAMPLETBL;";
-				setSQL(sql);
+				//sql="select * from SAMPLETBL;";
+				//setSQL(sql);
 
 				if(executeSQL()) {
 					//参照系処理

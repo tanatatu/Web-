@@ -23,7 +23,7 @@ public class BLJGoodsList extends BLJsonMap4DB implements IBisinessLogic {
 
 		super.pageTitle = "BLJGoodsList";
 
-		super.defaultSQL = firstParam("list");
+		super.defaultSQL = "SELECT * from item;";
 
 	}
 

@@ -28,16 +28,6 @@
 	</div>
 
 	<!-- Sub Menu List-->
-	<!--  お引越し
-	<table>
-	<tr><td><a id="goodsView" href="javascript:void(0)">品物一覧 </a></td>
-	<td><a id="stockManegement" href="javascript:void(0)">在庫管理 </a></td>
-	<td><a id="orderingWork" href="javascript:void(0)">発注作業 </a></td>
-	<td><a id="goodsCheck" href="javascript:void(0)">品物検品 </a></td>
-	<td><a id="Inventories" href="javascript:void(0)">棚卸作業 </a></td>
-	<td><a id="History" href="javascript:void(0)">履歴表示 </a></td></tr>
-	</table>
--->
 	<!-- Body  -->
 	<div id="ebase6_body">
 	    <div id="ebase6_nav">
@@ -83,6 +73,7 @@
 	<!-- Initial Page -->
 	<div id="ebase6_initial_body">
 
+	<div id="ebase6_initial_head">認証処理</div>
 	<table id = "login_ninsyo">
 		<tr>
 		<td>ユーザー名</td>
@@ -93,6 +84,7 @@
 		<td><input id = "pass_word" type="text" name="user" size="32"></td>
 		</tr>
 	</table>
+	<div id="ebase6_initial_bottom">ユーザー名、パスワードを入力してください</div>
 
 <!-- <pre>
 認証画面作成
@@ -117,7 +109,11 @@
 
 <!-- スクリプト //-->
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/control.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/sqlexe.js"></script>
+<script type="text/javascript" src="js/xmlexe.js"></script>
+<script type="text/javascript" src="js/enya_addwork.js"></script>
 <script type="text/javascript" src="js/jQuery/tablesorter/jquery.tablesorter.js"></script>
-<script type="text/javascript" src="js/ebase6.js"></script>
 
 </html>
