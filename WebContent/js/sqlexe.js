@@ -14,6 +14,32 @@ $(function(){
 		$('#ebase6_popup').css('display', 'none');
 	};
 
+	//SQL入力用のテキストボックス作成
+	$('a[id=dbexe]').click(function(){
+		$('#ebase6_popup').css('width', '300');
+		$('#ebase6_popup').css('height', '200');
+		$('#ebase6_popup').css('margin', '-150px 0 0 -100px');
+		$('#ebase6_shadow').css('display', 'block'); //他入力欄をシャドウ化
+		$('#ebase6_popup').css('display', 'block'); //ポップアップ表示
+		$('#ebase6_popup_title').html(messages['TOPDBEXE']); //ポップアップにメッセージ表示
+		$('#ebase6_popup_body').empty(); //ボディ初期化
+		$('#ebase6_popup_foot').empty(); //フッター初期化
+		//実行ボタン作成
+		var btn = document.createElement("input");
+		btn.setAttribute('type',"button");
+		btn.setAttribute('value',messages['BTNSUBMIT']);
+		btn.setAttribute('id',"ebase6_popup_submit");
+		$('#ebase6_popup_foot').append(btn);
+		$('#ebase6_popup_submit').off("click"); //実行ボタンの処理を初期化
+		$('#ebase6_popup_submit').on("click" , sqlExecute ); //実行ボタンの処理変更
+		$('#ebase6_popup_submit').on("click" , menuClose ); //ポップアップを閉じる
+		//入力欄作成
+		var inp = document.createElement("textarea");
+		inp.setAttribute('id',"ebase6_popup_sql");
+		inp.style.cssText = 'position:absolute;left:0;width:295px;height:128px;';
+		$('#ebase6_popup_body').append(inp);
+	});
+
 	//SQLの実行
 	function sqlExecute() {
 		//var sql = prompt("input sql","");
@@ -95,30 +121,4 @@ $(function(){
 		});
 	}
 
-
-	//SQL入力用のテキストボックス作成
-	$('a[id=dbexe]').click(function(){
-		$('#ebase6_popup').css('width', '300');
-		$('#ebase6_popup').css('height', '200');
-		$('#ebase6_popup').css('margin', '-150px 0 0 -100px');
-		$('#ebase6_shadow').css('display', 'block'); //他入力欄をシャドウ化
-		$('#ebase6_popup').css('display', 'block'); //ポップアップ表示
-		$('#ebase6_popup_title').html(messages['TOPDBEXE']); //ポップアップにメッセージ表示
-		$('#ebase6_popup_body').empty(); //ボディ初期化
-		$('#ebase6_popup_foot').empty(); //フッター初期化
-		//実行ボタン作成
-		var btn = document.createElement("input");
-		btn.setAttribute('type',"button");
-		btn.setAttribute('value',messages['BTNSUBMIT']);
-		btn.setAttribute('id',"ebase6_popup_submit");
-		$('#ebase6_popup_foot').append(btn);
-		$('#ebase6_popup_submit').off("click"); //実行ボタンの処理を初期化
-		$('#ebase6_popup_submit').on("click" , sqlExecute ); //実行ボタンの処理変更
-		$('#ebase6_popup_submit').on("click" , menuClose ); //ポップアップを閉じる
-		//入力欄作成
-		var inp = document.createElement("textarea");
-		inp.setAttribute('id',"ebase6_popup_sql");
-		inp.style.cssText = 'position:absolute;left:0;width:295px;height:128px;';
-		$('#ebase6_popup_body').append(inp);
-	});
 });

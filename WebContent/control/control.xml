@@ -11,8 +11,8 @@
 		<loglevel>TRACE</loglevel>
 	</QUBE>
 	<QUBE id="LOGON001">
-		<logic>com.excellence.ebase6.LogonLogic</logic>
-		<urls>/view/common/top.jsp</urls>
+		<logic>com.excellence.dqube.base.NullLogic</logic>
+		<urls>/view/common/error.jsp</urls>
 		<loglevel>TRACE</loglevel>
 	</QUBE>
 

@@ -68,11 +68,14 @@
 	</div>
 
 	<!-- Shadow  -->
-	<div id="ebase6_shadow"></div>
+	<!--<div id="ebase6_shadow"></div>-->
 
 	<!-- Initial Page -->
-	<div id="ebase6_initial_body">
+	<!--<div id="ebase6_initial_body">-->
 
+<!-- <pre>
+認証画面作成
+</pre>
 	<div id="ebase6_initial_head">認証処理</div>
 	<table id = "login_ninsyo">
 		<tr>
@@ -86,11 +89,8 @@
 	</table>
 	<div id="ebase6_initial_bottom">ユーザー名、パスワードを入力してください</div>
 
-<!-- <pre>
-認証画面作成
-</pre> -->
 		<input type="button" id="ebase6_logon" value="ok"  style="position: absolute; left: 0px; bottom: 0px">
-	</div>
+	</div>-->
 
 	<!-- Popup -->
 	<div id="ebase6_popup">
@@ -114,6 +114,10 @@
 <script type="text/javascript" src="js/sqlexe.js"></script>
 <script type="text/javascript" src="js/xmlexe.js"></script>
 <script type="text/javascript" src="js/enya_addwork.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/itemlist.js"></script>
+<script type="text/javascript" src="js/orderexe.js"></script>
+<script type="text/javascript" src="js/checkexe.js"></script>
 <script type="text/javascript" src="js/jQuery/tablesorter/jquery.tablesorter.js"></script>
 
 </html>

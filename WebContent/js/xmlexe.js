@@ -1,9 +1,9 @@
 /**
- * javascript for ebase6
+ * javascript for xmlexe
  */
 
 /**
-* 各機能の処理に飛ぶ
+* XMLファイル処理用スクリプト
 */
 $(function(){
 

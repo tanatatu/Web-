@@ -88,7 +88,7 @@ public class DegitQubeController extends HttpServlet {
 
 		// 処理パターンを取得
 		String actionID = req.getParameter("actionID");
-		if(actionID==null||actionID.equals("")) actionID = FixedValue._LOGONPAGE; //とりあえずエラーページのIDを自動セットしておく。
+		if(actionID==null||actionID.equals("")) actionID = FixedValue._LOGONAFTPAGE; //とりあえずエラーページのIDを自動セットしておく。
 
 		// システムコントロールデータをsessionから取得
 		IModel systemctl = (IModel) session.getAttribute(K_SYSTEMCONTROL);
@@ -125,7 +125,7 @@ public class DegitQubeController extends HttpServlet {
 			ap = new AccountPrincipal();
 			ap.setData(AccountPrincipal.K_ACCOUNT_ID, "----------------");
 			if(!logonIgnore){ //認証を無視しない場合
-				actionID = FixedValue._LOGONPAGE;
+				actionID = FixedValue._LOGONAFTPAGE;
 			}
 		}
 
