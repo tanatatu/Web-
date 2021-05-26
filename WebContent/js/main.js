@@ -8,8 +8,13 @@
 $(function(){
 
 	//ログイン認証処理キック
-	$('#ebase6_logon').click(function(){
-		$.ninsyo();
+	//$('#ebase6_logon').click(function(){
+		//$.ninsyo();
+	//});
+
+	//ログアウト処理キック
+	$('#ebase6_logout').click(function(){
+		$.logout();
 	});
 
 	//品物一覧画面出力処理キック

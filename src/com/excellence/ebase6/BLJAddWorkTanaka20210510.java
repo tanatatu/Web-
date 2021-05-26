@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.excellence.dqube.base.AccountPrincipal;
 import com.excellence.dqube.base.BLJsonMap4DB;
 import com.excellence.dqube.base.FixedValue;
 import com.excellence.dqube.base.IBisinessLogic;
@@ -149,6 +150,19 @@ public class BLJAddWorkTanaka20210510 extends BLJsonMap4DB implements IBisinessL
 						}
 						result.add(map); //データ格納（テーブルrowデータ）
 					}
+
+					//テーブルデータが空の時は認証NG
+					if (result.isEmpty()) {
+						$log.trace("tbldata null");
+			        } else {
+			        	//アカウント情報を保管
+			    		AccountPrincipal akname =  new AccountPrincipal();
+			    		akname.setData(AccountPrincipal.K_ACCOUNT_NAME, user);
+
+			    		//アカウント情報をセット
+			    		outModel.setData("account", akname);
+			        }
+
 				}
 			} else {
 				$log.error("execute error");

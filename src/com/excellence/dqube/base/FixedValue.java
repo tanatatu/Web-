@@ -33,6 +33,12 @@ public interface FixedValue {
 
 	public static String _LOGONAFTPAGE = "LOGON001"; //Logon Process Page ID
 
+	public static String _ADDWORK = "ADDWORK02";
+
+	public static String _LOGOUT = "ADDWORK03";
+
+	public static String _MESSAGE = "MSGGET01";
+
 	/** XML FILE **/
 
 	public static String _LOG_XML_File = "system.xml"; //System Parameter XML

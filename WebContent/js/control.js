@@ -71,6 +71,9 @@ $(function(){
 
 	});
 
+
+	//}
+
 	/*function time() {
 
 	var field = document.getElementById("datafield");

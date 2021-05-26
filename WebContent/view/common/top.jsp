@@ -18,6 +18,7 @@
 
 	<!-- Main Menu  -->
 	<div id="ebase6_mainmenu">
+		<button id="ebase6_logout" type="button">ログアウト</button>
 		<!--Excellence Business Application System Executer 6  -->
 		在庫管理システム
 	</div>

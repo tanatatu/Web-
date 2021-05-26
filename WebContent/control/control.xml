@@ -12,7 +12,7 @@
 	</QUBE>
 	<QUBE id="LOGON001">
 		<logic>com.excellence.dqube.base.NullLogic</logic>
-		<urls>/view/common/error.jsp</urls>
+		<urls>/view/common/top.jsp</urls>
 		<loglevel>TRACE</loglevel>
 	</QUBE>
 
@@ -51,6 +51,11 @@
 		<urls>JSON</urls>
 		<loglevel>TRACE</loglevel>
 		<logonignore>true</logonignore>
+	</QUBE>
+	<QUBE id="ADDWORK03">
+		<logic>com.excellence.dqube.base.NullLogic</logic>
+		<urls>JSON</urls>
+		<loglevel>TRACE</loglevel>
 	</QUBE>
 	<QUBE id="InsertData">
 		<logic>com.excellence.ebase6.BLJInsertData</logic>

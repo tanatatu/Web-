@@ -88,7 +88,7 @@ public class DegitQubeController extends HttpServlet {
 
 		// 処理パターンを取得
 		String actionID = req.getParameter("actionID");
-		if(actionID==null||actionID.equals("")) actionID = FixedValue._LOGONAFTPAGE; //とりあえずエラーページのIDを自動セットしておく。
+		if(actionID==null||actionID.equals("")) actionID = FixedValue._LOGONPAGE; //とりあえずログインページのIDを自動セットしておく。
 
 		// システムコントロールデータをsessionから取得
 		IModel systemctl = (IModel) session.getAttribute(K_SYSTEMCONTROL);
@@ -109,25 +109,28 @@ public class DegitQubeController extends HttpServlet {
 			session.setAttribute(K_QUBE,qb);
 		}
 
+		// 認証の要・不要
+		boolean logonIgnore = $sa.isTrue(qb.getLogonIgnore(actionID));
+
+		//認証情報をsessionから取得
+		AccountPrincipal ap = (AccountPrincipal) session.getAttribute(K_PRINCIPAL);
+		if(ap == null && ! actionID.equals(FixedValue._MESSAGE) && ! actionID.equals(FixedValue._ADDWORK)){ //認証情報がない
+		  actionID = FixedValue._LOGONPAGE;
+		  /*//認証情報がない->認証処理に変換
+			if(!logonIgnore){ //認証を無視しない場合
+				actionID = FixedValue._LOGONPAGE;
+			}*/
+		}
+		ap = new AccountPrincipal();
+		ap.setData(AccountPrincipal.K_ACCOUNT_ID, "----------------");
+
+
 		// ビジネスロジック名
 		String logic_name = qb.getLogicName(actionID);
 		// ビューのURI
 		String view_uri = qb.getURI(actionID);
 		// ビジネスロジックのログレベル
 		String logic_loglevel = qb.getLogLevel(actionID);
-		// 認証の要・不要
-		boolean logonIgnore = $sa.isTrue(qb.getLogonIgnore(actionID));
-
-		//認証チェック
-		AccountPrincipal ap = (AccountPrincipal) session.getAttribute(K_PRINCIPAL);
-		if(ap == null){ //認証情報がない
-			//認証情報がない->認証処理に変換
-			ap = new AccountPrincipal();
-			ap.setData(AccountPrincipal.K_ACCOUNT_ID, "----------------");
-			if(!logonIgnore){ //認証を無視しない場合
-				actionID = FixedValue._LOGONAFTPAGE;
-			}
-		}
 
 		//ログフォーマットをセット（範囲：このクラスのみ）
 		String lf[] = {"%d","%t","%l",this.getClass().getName(),ap.getAccountID(),"%m"};
@@ -207,7 +210,7 @@ public class DegitQubeController extends HttpServlet {
 		}
 
 		// 認証処理の場合だけの処理
-		if( actionID.equals(FixedValue._LOGONAFTPAGE) && ! view_uri.equals(FixedValue._ERRORPAGE) ){
+		if( actionID.equals(FixedValue._ADDWORK) && ! view_uri.equals(FixedValue._ERRORPAGE) ){
 			ap = (AccountPrincipal) outModel.getData("account");
 			session.setAttribute(K_PRINCIPAL,ap);
 			log.trace("Out-Model Set OK");
@@ -229,6 +232,11 @@ public class DegitQubeController extends HttpServlet {
 
 			log.trace("JsonString [" + jsonText + "]");
 			out.println(jsonText);
+
+			//ログアウト処理が行われた場合はセッションを破棄
+			if(actionID.equals(FixedValue._LOGOUT)){
+					session.invalidate();
+			}
 
 		}else{
 			log.trace("Response View");

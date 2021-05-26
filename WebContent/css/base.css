@@ -24,6 +24,13 @@ a:active { text-decoration: underline; color: #333399; }
 	font-size : 32px;
 }
 
+/* ログアウトボタン */
+#ebase6_logout {
+	position : fixed;
+	font-size : 10px;
+	right : 0;
+}
+
 /* サブメニュー */
 #ebase6_submenu {
 	background-color :#a5a5a5;
